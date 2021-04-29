@@ -5,7 +5,7 @@ const contactForm = document.querySelector("#contact-submit");
 const submitted = document.querySelector(".submitted");
 
 submitted.style.transform = "translateY(10rem)";
-submitted.style.display = "none";
+// submitted.style.display = "none";
 
 contactForm.addEventListener("click", function (e) {
   e.preventDefault();
