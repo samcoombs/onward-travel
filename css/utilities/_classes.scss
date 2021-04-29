@@ -1,0 +1,16 @@
+// For Global Classes
+
+.yellow {
+  color: $color-yellow;
+}
+
+.yellow-line {
+  width: 15rem;
+  height: 0.25rem;
+  background-color: $color-yellow;
+  margin-bottom: 2rem;
+}
+
+.hidden-blog {
+  display: none;
+}

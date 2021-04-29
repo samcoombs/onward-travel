@@ -1,0 +1,74 @@
+.nav {
+  height: 10vh;
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5vw 0 5vw;
+  position: absolute;
+  z-index: 1;
+
+  animation: fadeFromTop 1s 1.5s;
+  animation-fill-mode: backwards;
+
+  &__logo {
+    height: 1.5rem;
+  }
+
+  &__list {
+    display: inline-flex;
+    list-style: none;
+    &--item {
+      margin: 0 1.5rem 0 1.5rem;
+    }
+  }
+}
+
+.hamburger {
+  display: none;
+}
+
+@media only screen and (max-width: $bp-tablet) {
+  .nav {
+    &__logo {
+      height: 1.75rem;
+    }
+
+    &__list {
+      width: 100vw;
+      height: 100vh;
+      position: absolute;
+      top: 0;
+      // left: 0;
+      left: 100vw;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+
+      background-color: $color-black;
+      display: none;
+
+      &--item {
+        margin: 0;
+      }
+
+      &--link {
+        font-size: 4rem;
+      }
+    }
+  }
+
+  .hamburger {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 2rem;
+    z-index: 2; //Places hamburger infrom on nav list
+    &__line {
+      width: 2.8rem;
+      height: 0.4rem;
+      background-color: $color-white;
+    }
+  }
+}

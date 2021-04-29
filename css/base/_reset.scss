@@ -1,0 +1,19 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62%;
+}
+
+body {
+  font-family: $default-font; //Maybe put this in the top one instead of body?
+  box-sizing: border-box;
+  color: $color-white;
+  background-color: $color-black;
+  // overflow-x: hidden;
+}

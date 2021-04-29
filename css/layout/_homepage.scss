@@ -1,0 +1,241 @@
+.homepage {
+  &__body {
+    overflow: hidden; //prevents scrolling on homepage
+  }
+}
+
+.home {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text {
+  &__container {
+    //Text container
+    width: 60%;
+  }
+  //padding for text
+  padding-left: 10rem;
+  padding-right: 10rem;
+
+  //Title
+  &__title {
+    overflow: hidden;
+    height: 10rem; // This and the overflow hide the other titles
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    animation: fadeFromLeft 1s;
+  }
+
+  // Description
+  &__description {
+    overflow: hidden;
+    height: 8rem;
+    max-width: 66.5rem;
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    animation: fadeFromLeft 1s 0.5s;
+    animation-fill-mode: backwards;
+  }
+}
+
+//   Media Query for HOME
+/////////////////////////////////////////////////////
+@media only screen and (max-width: $bp-tablet) {
+  .home {
+    flex-direction: column;
+  }
+}
+/////////////////////////////////////////////////////
+
+//   Media Query for TEXT
+/////////////////////////////////////////////////////
+
+@media only screen and (min-width: $bp-desktop-large) {
+  .text {
+    &__container {
+      width: 70%;
+    }
+  }
+}
+
+@media only screen and (max-width: $bp-laptop-small) {
+  .text {
+    padding-right: 7rem;
+
+    &__title {
+      height: 87px;
+    }
+    &__description {
+      width: 446px;
+    }
+  }
+}
+@media only screen and (max-width: $bp-tablet) {
+  .text {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    &__description {
+      display: none;
+    }
+
+    &__title {
+      height: 8.7rem;
+
+      animation: fadeFromBottom 1s;
+      animation-fill-mode: backwards;
+    }
+  }
+}
+
+@media only screen and (max-width: $bp-phone-m) {
+  .text {
+    &__title {
+      height: 64px;
+    }
+  }
+}
+
+/////////////////////////////////////////////////////
+
+.glide {
+  width: 40%;
+
+  animation: fadeFromRight 1s;
+
+  .slide {
+    // Styling for the cards in the slider
+    height: 50rem;
+    width: 25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 4rem; //Maybe Remove
+    flex-shrink: 0; //Maybe Remove
+
+    &-img {
+      //   Styling for image within the slider card
+      height: 30rem;
+
+      overflow: hidden;
+      position: relative;
+      transition: all 0.5s;
+
+      & img {
+        width: 90%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 1rem;
+      }
+    }
+  }
+
+  &__slide {
+    &--active .slide-img {
+      //Active slide will be taller
+      height: 35rem;
+    }
+  }
+}
+//   Media Query for slider
+/////////////////////////////////////////////////////
+@media only screen and (min-width: $bp-desktop-large) {
+  .glide {
+    width: 30%;
+    // position: absolute;
+    // right: 0;
+    .slide {
+      height: 50rem;
+      width: 32.5rem;
+
+      &-img {
+        height: 38.5rem;
+
+        & img {
+          width: 75%;
+          height: 85%;
+        }
+      }
+    }
+    &__slide {
+      &--active .slide-img {
+        //Active slide will be taller
+        height: 45rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $bp-laptop-small) {
+  .glide {
+    margin-top: 5rem;
+    .slide {
+      height: 40rem;
+      width: 22.5rem;
+
+      &-img {
+        height: 28.5rem;
+
+        & img {
+          width: 75%;
+          height: 85%;
+        }
+      }
+    }
+    &__slide {
+      &--active .slide-img {
+        //Active slide will be taller
+        height: 32.5rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $bp-tablet) {
+  .glide {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 5vw;
+
+    animation: fadeFromBottom 1s 1s;
+    animation-fill-mode: backwards;
+
+    &__track {
+      display: none;
+    }
+  }
+}
+/////////////////////////////////////////////////////
+
+.background-hover {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  top: 0;
+  background-color: $color-yellow;
+  z-index: -1;
+}

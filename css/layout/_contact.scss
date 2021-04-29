@@ -1,0 +1,77 @@
+.contact {
+  width: 100%;
+  height: 90vh;
+  padding: 5rem 5rem 0 5rem;
+  top: 10vh;
+  position: relative;
+}
+
+.form {
+  margin-top: 5rem;
+  width: 40rem;
+  animation: fadeFromLeft 1s;
+  &__item {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 0 2rem 0;
+
+    &--text {
+      font-family: $default-font;
+      height: 3rem;
+      padding-left: 1rem;
+      border: none;
+      transition: all 0.3s;
+
+      &:focus {
+        outline: none;
+        border-left: 0.5rem solid $color-yellow;
+      }
+      &:invalid {
+        border-left: 0.5rem solid $color-red;
+      }
+    }
+
+    &--message {
+      font-family: $default-font;
+
+      padding: 1rem 0 0 1rem;
+      transition: all 0.3s;
+
+      &:focus {
+        outline: none;
+        border-left: 0.5rem solid $color-yellow;
+      }
+    }
+
+    label {
+      margin: 0.5rem 0 0.5rem 0;
+    }
+  }
+}
+
+@media only screen and (max-width: $bp-phone-l) {
+  .contact {
+    padding: 5rem 5vw 5rem 5vw;
+  }
+  .form {
+    width: auto;
+  }
+}
+
+.submitted {
+  width: 100vw;
+  height: 10vh;
+  position: absolute;
+  background-color: $color-green;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  // display: none;
+
+  &__title {
+    font-size: 1.25rem;
+    text-transform: uppercase;
+  }
+}

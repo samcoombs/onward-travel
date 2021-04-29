@@ -1,0 +1,88 @@
+// Explore BTN - Homepage
+.text {
+  &__btn {
+    &--btn {
+      width: 15rem;
+      height: 5rem;
+      background-color: transparent;
+      border: 2px solid $color-white;
+      color: $color-white;
+      //   text-decoration: none;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: transform 0.3s;
+
+      animation: fadeFromLeft 1s 1s;
+      animation-fill-mode: backwards;
+
+      &:hover {
+        transform: translateY(-2px);
+      }
+
+      &:active {
+        transform: translateY(2px);
+      }
+
+      @media only screen and (max-width: $bp-tablet) {
+        animation: fadeFromBottom 1s 0.5s;
+        animation-fill-mode: backwards;
+      }
+    }
+  }
+}
+
+// Slider BTN - Homepage
+.controls {
+  // BTN positioning
+  width: 10rem;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  left: 6.25rem;
+
+  // BTN stlying
+  &__btn {
+    border: none; //Removes default btn border
+    background: none; // Removes default btn background
+    height: 3rem;
+    width: 3rem;
+    background-color: $color-white;
+    font-size: 1.5rem;
+    border-radius: 50rem;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+
+    &:hover {
+      opacity: 1;
+    }
+    &:active {
+      transform: scale(0.8);
+    }
+  }
+}
+
+@media only screen and (max-width: $bp-laptop-small) {
+  .controls {
+    left: 3.4rem;
+  }
+}
+
+@media only screen and (max-width: $bp-tablet) {
+  .controls {
+    width: 25rem;
+    left: auto;
+    &__btn {
+      width: 4rem;
+      height: 4rem;
+      font-size: 1.75rem;
+    }
+  }
+}
+
+.loadmore {
+  &__btn {
+    width: 15rem;
+    height: 5rem;
+  }
+}

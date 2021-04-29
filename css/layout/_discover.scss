@@ -1,0 +1,43 @@
+.discover {
+  &__list {
+    position: absolute;
+    width: auto;
+    height: 90vh;
+    top: 10vh;
+    margin-left: 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    list-style: none;
+    z-index: -1;
+
+    &--item {
+      &-1 {
+        animation: fadeFromLeft 1s;
+      }
+      &-2 {
+        animation: fadeFromLeft 1s 0.25s;
+        animation-fill-mode: backwards;
+      }
+      &-3 {
+        animation: fadeFromLeft 1s 0.5s;
+        animation-fill-mode: backwards;
+      }
+      &-4 {
+        animation: fadeFromLeft 1s 0.75s;
+        animation-fill-mode: backwards;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $bp-phone-m) {
+  .discover {
+    &__list {
+      &--item {
+        margin: 2rem 0 2rem 0;
+      }
+    }
+  }
+}
